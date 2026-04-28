@@ -43,7 +43,7 @@ const CONFIG = {
     address: "충남 아산시 배방읍 희망로 100 KTX역사내 2층",
     tel: "041-520-9999",
     mapLinks: {
-      kakao: "https://kko.to/dAEWVDs9xL/",
+      kakao: "https://map.kakao.com/link/map/20807979/",
       naver: "https://naver.me/551BYK7m/"
     }
   },
