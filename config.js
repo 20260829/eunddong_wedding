@@ -20,7 +20,7 @@ const CONFIG = {
   groom: {
     name: "신동규",
     nameEn: "Groom",
-    father: "아버지",
+    father: "신용붕",
     mother: "김미경",
     fatherDeceased: false,
     motherDeceased: false
@@ -44,7 +44,7 @@ const CONFIG = {
     tel: "041-520-9999",
     mapLinks: {
       kakao: "https://place.map.kakao.com/20807979/",
-      naver: "https://map.naver.com/"
+      naver: "https://naver.me/551BYK7m/"
     }
   },
 
@@ -79,7 +79,7 @@ const CONFIG = {
 
   // ── 링크 공유 시 나타나는 문구 ──
   meta: {
-    title: "신랑 ♥ 신부 결혼합니다",
-    description: "2026년 5월 9일, 소중한 분들을 초대합니다."
+    title: "동규 ♥ 은혜 결혼합니다",
+    description: "2026년 8월 29일, 소중한 분들을 초대합니다."
   }
 };
