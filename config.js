@@ -43,8 +43,8 @@ const CONFIG = {
     address: "충남 아산시 배방읍 희망로 100 KTX역사내 2층",
     tel: "041-520-9999",
     mapLinks: {
-      kakao: "https://map.kakao.com/link/map/CA웨딩컨벤션/",
-      naver: "https://map.naver.com/v5/search/CA웨딩컨벤션/"
+      kakao: "https://map.kakao.com/link/map/CA웨딩컨벤션,36.7949,127.1045/",
+      naver: "https://map.naver.com/v5/entry/place/13491264/"
     }
   },
 
