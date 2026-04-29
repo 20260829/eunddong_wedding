@@ -149,13 +149,11 @@ a {
 }
 
 .curtain__left {
-  left: 0;
-  background: linear-gradient(135deg, #3a4b2e 0%, #4A5E3B 40%, #5a6e4b 100%);
+  background: linear-gradient(135deg, #3FA7D6 0%, #5BB6E6 40%, #8ED1FC 100%);
 }
 
 .curtain__right {
-  right: 0;
-  background: linear-gradient(225deg, #3a4b2e 0%, #4A5E3B 40%, #5a6e4b 100%);
+  background: linear-gradient(225deg, #3FA7D6 0%, #5BB6E6 40%, #8ED1FC 100%);
 }
 
 /* Botanical texture on curtain panels */
@@ -452,17 +450,14 @@ a {
 }
 
 .hero__overlay {
-  position: absolute;
-  inset: 0;
   background: linear-gradient(
     to bottom,
     transparent 0%,
     transparent 35%,
-    rgba(58, 75, 46, 0.2) 55%,
-    rgba(58, 75, 46, 0.55) 75%,
-    rgba(58, 75, 46, 0.85) 100%
+    rgba(63, 167, 214, 0.2) 55%,
+    rgba(63, 167, 214, 0.55) 75%,
+    rgba(63, 167, 214, 0.85) 100%
   );
-  z-index: 1;
 }
 
 .hero__photo {
