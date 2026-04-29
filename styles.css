@@ -5,36 +5,32 @@
 
 /* ─── CSS Variables ─── */
 :root {
-  --color-sage: #8ED1FC;       
-  --color-sage-light: #BFE7FF;  
-  --color-sage-lighter: #EAF6FF;
-  --color-forest: #5BB6E6;      
-  --color-forest-dark: #3FA7D6; 
-
-  --color-cream: #F4FAFF;       
-  --color-warm-white: #FAFDFF; 
-
-  --color-brown: #7A9FB8;
-  --color-brown-light: #AFC8D8;
+  --color-sage: #8B9E7E;
+  --color-sage-light: #a8b89e;
+  --color-sage-lighter: #c5d2bc;
+  --color-forest: #4A5E3B;
+  --color-forest-dark: #3a4b2e;
+  --color-cream: #F5F2E8;
+  --color-warm-white: #FAFAF5;
+  --color-brown: #8B7355;
+  --color-brown-light: #a89578;
 
   --color-bg: var(--color-warm-white);
   --color-bg-warm: var(--color-cream);
   --color-bg-card: #ffffff;
-
-  --color-text: #2f3e4a;
-  --color-text-light: #5f7a8c;
-  --color-text-muted: #9bb3c3;
-
+  --color-text: #3d3d32;
+  --color-text-light: #6b6b5e;
+  --color-text-muted: #9a9a8a;
   --color-accent: var(--color-sage);
   --color-accent-light: var(--color-sage-light);
   --color-accent-dark: var(--color-forest);
-
-  --color-border: #dbeaf3;
-  --color-divider: #cfe3ef;
-
-  --color-overlay: rgba(63, 167, 214, 0.5);
-  --color-toast-bg: rgba(63, 167, 214, 0.9);
-}
+  --color-border: #ddd8cc;
+  --color-divider: #ccc7b8;
+  --color-overlay: rgba(58, 64, 50, 0.6);
+  --color-kakao: #fee500;
+  --color-naver: #03c75a;
+  --color-white: #ffffff;
+  --color-toast-bg: rgba(74, 94, 59, 0.92);
 
   --font-serif: 'Noto Serif KR', 'Georgia', serif;
   --font-sans: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
@@ -149,11 +145,13 @@ a {
 }
 
 .curtain__left {
-  background: linear-gradient(135deg, #3FA7D6 0%, #5BB6E6 40%, #8ED1FC 100%);
+  left: 0;
+  background: linear-gradient(135deg, #3a4b2e 0%, #4A5E3B 40%, #5a6e4b 100%);
 }
 
 .curtain__right {
-  background: linear-gradient(225deg, #3FA7D6 0%, #5BB6E6 40%, #8ED1FC 100%);
+  right: 0;
+  background: linear-gradient(225deg, #3a4b2e 0%, #4A5E3B 40%, #5a6e4b 100%);
 }
 
 /* Botanical texture on curtain panels */
@@ -450,14 +448,17 @@ a {
 }
 
 .hero__overlay {
+  position: absolute;
+  inset: 0;
   background: linear-gradient(
     to bottom,
     transparent 0%,
     transparent 35%,
-    rgba(63, 167, 214, 0.2) 55%,
-    rgba(63, 167, 214, 0.55) 75%,
-    rgba(63, 167, 214, 0.85) 100%
+    rgba(58, 75, 46, 0.2) 55%,
+    rgba(58, 75, 46, 0.55) 75%,
+    rgba(58, 75, 46, 0.85) 100%
   );
+  z-index: 1;
 }
 
 .hero__photo {
