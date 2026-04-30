@@ -253,41 +253,35 @@
     </div>
   </div>
 
-  <!-- 기존 내용 전부 그대로 유지 -->
-  <!-- (중간 생략 - 너 코드 그대로 유지하면 됨) -->
-
-  <script src="script.js"></script>
-
-  <!-- 🎵 음악 컨트롤 JS -->
   <script>
-    const bgm = document.getElementById('bgm');
-    const musicBtn = document.getElementById('musicBtn');
-    const curtainBtn = document.getElementById('curtainBtn');
+document.addEventListener('DOMContentLoaded', () => {
+  const bgm = document.getElementById('bgm');
+  const musicBtn = document.getElementById('musicBtn');
+  const curtainBtn = document.getElementById('curtainBtn');
 
-    let isPlaying = false;
+  let isPlaying = false;
 
-    // 버튼으로 ON/OFF
-    musicBtn.addEventListener('click', () => {
-      if (!isPlaying) {
-        bgm.play();
-        musicBtn.textContent = "🔇 음악 OFF";
-        musicBtn.classList.add('active');
-      } else {
-        bgm.pause();
-        musicBtn.textContent = "🎵 음악 ON";
-        musicBtn.classList.remove('active');
-      }
-      isPlaying = !isPlaying;
-    });
+  // 음악 버튼
+  musicBtn.addEventListener('click', () => {
+    if (!isPlaying) {
+      bgm.play();
+      musicBtn.textContent = "🔇 음악 OFF";
+      musicBtn.classList.add('active');
+    } else {
+      bgm.pause();
+      musicBtn.textContent = "🎵 음악 ON";
+      musicBtn.classList.remove('active');
+    }
+    isPlaying = !isPlaying;
+  });
 
-    // 커튼 열 때 자동 재생
+  // 커튼 버튼
+  if (curtainBtn) {
     curtainBtn.addEventListener('click', () => {
       bgm.play();
       musicBtn.textContent = "🔇 음악 OFF";
       musicBtn.classList.add('active');
       isPlaying = true;
     });
-  </script>
-
-</body>
-</html>
+  }
+});
