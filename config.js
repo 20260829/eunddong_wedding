@@ -1,15 +1,17 @@
 /**
- * Wedding Invitation Configuration
+ * Modern Minimal Wedding Invitation Configuration
  *
- * 이 파일에서 청첩장의 모든 정보를 수정할 수 있습니다.
- * 이미지는 설정이 필요 없습니다. 아래 폴더에 순번 파일명으로 넣으면 자동 감지됩니다.
+ * Edit the values below to customize your wedding invitation.
+ * Image files should be placed in the corresponding images/ subfolders
+ * using sequential filenames (1.jpg, 2.jpg, ...).
+ * The code auto-detects images by trying sequential filenames.
  *
- * 이미지 폴더 구조 (파일명 규칙):
- *   images/hero/1.jpg      - 메인 사진 (1장, 필수)
- *   images/story/1.jpg, 2.jpg, ...  - 스토리 사진들 (순번, 자동 감지)
- *   images/gallery/1.jpg, 2.jpg, ... - 갤러리 사진들 (순번, 자동 감지)
- *   images/location/1.jpg  - 약도/지도 이미지 (1장)
- *   images/og/1.jpg        - 카카오톡 공유 썸네일 (1장)
+ * Image folder conventions:
+ *   images/hero/1.jpg       - Main wedding photo (single file)
+ *   images/story/1.jpg, ... - Story section photos (auto-detected)
+ *   images/gallery/1.jpg, . - Gallery photos (auto-detected)
+ *   images/location/1.jpg   - Venue/map image (single file)
+ *   images/og/1.jpg         - Kakao share thumbnail (single file)
  */
 
 const CONFIG = {
@@ -18,41 +20,40 @@ const CONFIG = {
 
   // ── 메인 (히어로) ──
   groom: {
-    name: "신동규",
-    nameEn: "Groom",
-    father: "신용붕",
-    mother: "김미경",
+    name: "신랑",
+    nameEn: "GROOM",
+    father: "아버지",
+    mother: "어머니",
     fatherDeceased: false,
     motherDeceased: false
   },
 
   bride: {
-    name: "김은혜",
-    nameEn: "Bride",
-    father: "김수진",
-    mother: "김경희",
+    name: "신부",
+    nameEn: "BRIDE",
+    father: "아버지",
+    mother: "어머니",
     fatherDeceased: false,
     motherDeceased: false
   },
 
- wedding: {
-    date: "2026-08-29",
+  wedding: {
+    date: "2025-01-01",
     time: "13:00",
-    venue: "CA 웨딩 컨벤션",
-    hall: "블리스홀",
-    address: "충남 아산시 배방읍 희망로 100 KTX역사내 2층",
-    tel: "041-520-9999",
+    venue: "예식장 이름",
+    hall: "3층 그랜드홀",
+    address: "서울특별시 강남구 테헤란로 123",
+    tel: "02-1234-5678",
     mapLinks: {
-      kakao: "https://map.kakao.com/link/to/CA웨딩컨벤션,36.794003,127.104582",
-      naver: "https://map.naver.com/v5/entry/place/31363497/"
+      kakao: "",
+      naver: ""
     }
   },
 
-
   // ── 인사말 ──
-  greeting: {
+  invitation: {
     title: "소중한 분들을 초대합니다",
-    content: "서로 다른 길을 걸어온 두 사람이\n이제 같은 길을 함께 걸어가려 합니다.\n\n저희의 새로운 시작을\n축복해 주시면 감사하겠습니다."
+    message: "서로 다른 길을 걸어온 두 사람이\n이제 같은 길을 함께 걸어가려 합니다.\n\n바쁘시더라도 오셔서\n축복해 주시면 감사하겠습니다."
   },
 
   // ── 우리의 이야기 ──
@@ -67,20 +68,21 @@ const CONFIG = {
   // ── 마음 전하실 곳 ──
   accounts: {
     groom: [
-      { role: "신랑", name: "홍길동", bank: "국민은행", number: "000-000-000000" },
-      { role: "아버지", name: "홍판서", bank: "신한은행", number: "000-000-000000" },
-      { role: "어머니", name: "김부인", bank: "우리은행", number: "000-000-000000" }
+      { role: "신랑", name: "홍길동", bank: "OO은행", number: "000-000-000000" },
+      { role: "아버지", name: "홍판서", bank: "OO은행", number: "000-000-000000" },
+      { role: "어머니", name: "김순이", bank: "OO은행", number: "000-000-000000" }
     ],
     bride: [
-      { role: "신부", name: "김영희", bank: "하나은행", number: "000-000-000000" },
-      { role: "아버지", name: "김사장", bank: "기업은행", number: "000-000-000000" },
-      { role: "어머니", name: "이부인", bank: "농협은행", number: "000-000-000000" }
+      { role: "신부", name: "김영희", bank: "OO은행", number: "000-000-000000" },
+      { role: "아버지", name: "김철수", bank: "OO은행", number: "000-000-000000" },
+      { role: "어머니", name: "이미자", bank: "OO은행", number: "000-000-000000" }
     ]
   },
 
   // ── 링크 공유 시 나타나는 문구 ──
-  meta: {
-    title: "똥깝쓰 ♥ 으네 결혼합니다",
-    description: "2025년 1월 1일, 소중한 분들을 초대합니다."
+  kakaoShare: {
+    jsKey: "",
+    title: "결혼식에 초대합니다",
+    description: ""
   }
 };
