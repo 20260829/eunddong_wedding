@@ -18,35 +18,36 @@ const CONFIG = {
 
   // ── 메인 (히어로) ──
   groom: {
-    name: "신랑",
+    name: "신동규",
     nameEn: "Groom",
-    father: "여기서이렇게이름을바꾸시면됩니다",
-    mother: "어머니",
+    father: "신용붕",
+    mother: "김미경",
     fatherDeceased: false,
     motherDeceased: false
   },
 
   bride: {
-    name: "신부",
+    name: "김은혜",
     nameEn: "Bride",
-    father: "아버지",
-    mother: "어머니",
+    father: "김수진",
+    mother: "김경희",
     fatherDeceased: false,
     motherDeceased: false
   },
 
-  wedding: {
-    date: "2026-05-09",
+ wedding: {
+    date: "2026-08-29",
     time: "13:00",
-    venue: "예식장 이름",
-    hall: "그랜드홀 5층",
-    address: "서울특별시 강남구 테헤란로 123",
-    tel: "02-1234-5678",
+    venue: "CA 웨딩 컨벤션",
+    hall: "블리스홀",
+    address: "충남 아산시 배방읍 희망로 100 KTX역사내 2층",
+    tel: "041-520-9999",
     mapLinks: {
-      kakao: "https://map.kakao.com/",
-      naver: "https://map.naver.com/"
+      kakao: "https://map.kakao.com/link/to/CA웨딩컨벤션,36.794003,127.104582",
+      naver: "https://map.naver.com/v5/entry/place/31363497/"
     }
   },
+
 
   // ── 인사말 ──
   greeting: {
@@ -79,7 +80,7 @@ const CONFIG = {
 
   // ── 링크 공유 시 나타나는 문구 ──
   meta: {
-    title: "신랑 ♥ 신부 결혼합니다",
+    title: "똥깝쓰 ♥ 으네 결혼합니다",
     description: "2025년 1월 1일, 소중한 분들을 초대합니다."
   }
 };
