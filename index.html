@@ -206,3 +206,88 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="똥깝 ♥ 으네 결혼합니다">
+<meta property="og:description" content="2026년 8월 29일, 소중한 분들을 초대합니다.">
+<meta property="og:image" content="https://20260829.github.io/eunddong_wedding/images/og/main(2).jpg">
+<meta property="og:url" content="https://20260829.github.io/eunddong_wedding/">
+<meta name="description" content="2026년 8월 29일, 소중한 분들을 초대합니다.">
+
+  <title>Wedding Invitation</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&family=Cormorant+Garamond&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js"></script>
+</head>
+
+<body>
+
+  <!-- 🎵 배경음악 -->
+  <audio id="bgm" loop>
+    <source src="music/bgm.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- 🎵 음악 버튼 -->
+  <button id="musicBtn" class="music-btn">🎵 음악 ON</button>
+
+  <!-- ═══ Curtain Opening Animation ═══ -->
+  <div id="curtain" class="curtain">
+    <div class="curtain__left"></div>
+    <div class="curtain__right"></div>
+    <div class="curtain__content">
+      <p class="curtain__subtitle">Wedding Invitation</p>
+      <p class="curtain__names" id="curtainNames"></p>
+      <button class="curtain__btn" id="curtainBtn">초대장 열기</button>
+    </div>
+  </div>
+
+  <!-- 기존 내용 전부 그대로 유지 -->
+  <!-- (중간 생략 - 너 코드 그대로 유지하면 됨) -->
+
+  <script src="script.js"></script>
+
+  <!-- 🎵 음악 컨트롤 JS -->
+  <script>
+    const bgm = document.getElementById('bgm');
+    const musicBtn = document.getElementById('musicBtn');
+    const curtainBtn = document.getElementById('curtainBtn');
+
+    let isPlaying = false;
+
+    // 버튼으로 ON/OFF
+    musicBtn.addEventListener('click', () => {
+      if (!isPlaying) {
+        bgm.play();
+        musicBtn.textContent = "🔇 음악 OFF";
+        musicBtn.classList.add('active');
+      } else {
+        bgm.pause();
+        musicBtn.textContent = "🎵 음악 ON";
+        musicBtn.classList.remove('active');
+      }
+      isPlaying = !isPlaying;
+    });
+
+    // 커튼 열 때 자동 재생
+    curtainBtn.addEventListener('click', () => {
+      bgm.play();
+      musicBtn.textContent = "🔇 음악 OFF";
+      musicBtn.classList.add('active');
+      isPlaying = true;
+    });
+  </script>
+
+</body>
+</html>
