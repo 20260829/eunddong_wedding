@@ -1,39 +1,29 @@
 /* ═══════════════════════════════════════════
-   Nature Green Wedding Invitation
+   Classic Elegant Wedding Invitation
    Korean Mobile 청첩장 - Styles
    ═══════════════════════════════════════════ */
 
 /* ─── CSS Variables ─── */
 :root {
-  --color-sage: #8B9E7E;
-  --color-sage-light: #a8b89e;
-  --color-sage-lighter: #c5d2bc;
-  --color-forest: #4A5E3B;
-  --color-forest-dark: #3a4b2e;
-  --color-cream: #F5F2E8;
-  --color-warm-white: #FAFAF5;
-  --color-brown: #8B7355;
-  --color-brown-light: #a89578;
-
-  --color-bg: var(--color-warm-white);
-  --color-bg-warm: var(--color-cream);
+  --color-bg: #faf8f5;
+  --color-bg-warm: #f5f0ea;
   --color-bg-card: #ffffff;
-  --color-text: #3d3d32;
-  --color-text-light: #6b6b5e;
-  --color-text-muted: #9a9a8a;
-  --color-accent: var(--color-sage);
-  --color-accent-light: var(--color-sage-light);
-  --color-accent-dark: var(--color-forest);
-  --color-border: #ddd8cc;
-  --color-divider: #ccc7b8;
-  --color-overlay: rgba(58, 64, 50, 0.6);
+  --color-text: #3a3228;
+  --color-text-light: #7a7068;
+  --color-text-muted: #a09890;
+  --color-accent: #b8956a;
+  --color-accent-light: #d4b896;
+  --color-accent-dark: #96764e;
+  --color-border: #e8e0d8;
+  --color-divider: #d8cfc5;
+  --color-overlay: rgba(58, 50, 40, 0.6);
   --color-kakao: #fee500;
   --color-naver: #03c75a;
   --color-white: #ffffff;
-  --color-toast-bg: rgba(74, 94, 59, 0.92);
+  --color-toast-bg: rgba(58, 50, 40, 0.9);
 
   --font-serif: 'Noto Serif KR', 'Georgia', serif;
-  --font-sans: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  --font-display: 'Cormorant Garamond', 'Noto Serif KR', serif;
 
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -140,31 +130,17 @@ a {
   top: 0;
   width: 50%;
   height: 100%;
+  background: linear-gradient(180deg, #4a3f35 0%, #3a3228 100%);
   transition: transform 1.2s cubic-bezier(0.77, 0, 0.18, 1);
   will-change: transform;
 }
 
 .curtain__left {
   left: 0;
-  background: linear-gradient(135deg, #3a4b2e 0%, #4A5E3B 40%, #5a6e4b 100%);
 }
 
 .curtain__right {
   right: 0;
-  background: linear-gradient(225deg, #3a4b2e 0%, #4A5E3B 40%, #5a6e4b 100%);
-}
-
-/* Botanical texture on curtain panels */
-.curtain__left::after,
-.curtain__right::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80px 120px at 30% 20%, rgba(139,158,126,0.15) 0%, transparent 70%),
-    radial-gradient(ellipse 60px 90px at 70% 60%, rgba(139,158,126,0.1) 0%, transparent 70%),
-    radial-gradient(ellipse 100px 60px at 50% 85%, rgba(139,158,126,0.08) 0%, transparent 70%);
-  pointer-events: none;
 }
 
 .curtain.is-open .curtain__left {
@@ -192,19 +168,14 @@ a {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.curtain__leaf-icon {
-  margin-bottom: var(--spacing-md);
-  opacity: 0.6;
-}
-
 .curtain__subtitle {
-  font-family: var(--font-sans);
-  font-size: 0.8125rem;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
   font-weight: 300;
   letter-spacing: 4px;
   text-transform: uppercase;
   margin-bottom: var(--spacing-md);
-  opacity: 0.75;
+  opacity: 0.8;
 }
 
 .curtain__names {
@@ -216,32 +187,29 @@ a {
 }
 
 .curtain__btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  display: inline-block;
   padding: 0.875rem 2.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   color: var(--color-white);
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-size: 0.875rem;
   font-weight: 300;
   letter-spacing: 3px;
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent;
   transition: var(--transition);
   cursor: pointer;
-  border-radius: var(--radius-sm);
 }
 
 .curtain__btn:hover,
 .curtain__btn:focus {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.8);
 }
 
 /* ═══════════════════════════════════════════
-   Falling Leaves Canvas
+   Falling Petals Canvas
    ═══════════════════════════════════════════ */
-.leaf-canvas {
+.petal-canvas {
   position: fixed;
   inset: 0;
   z-index: 100;
@@ -262,7 +230,6 @@ a {
   color: var(--color-white);
   padding: 0.75rem 1.5rem;
   border-radius: 100px;
-  font-family: var(--font-sans);
   font-size: 0.8125rem;
   font-weight: 300;
   z-index: 10000;
@@ -371,7 +338,7 @@ a {
   left: 50%;
   transform: translateX(-50%);
   color: rgba(255, 255, 255, 0.7);
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: 0.875rem;
   letter-spacing: 2px;
 }
@@ -387,7 +354,6 @@ a {
 /* ─── Section Base ─── */
 .section {
   padding: var(--spacing-2xl) 0;
-  position: relative;
 }
 
 .section__inner {
@@ -403,32 +369,15 @@ a {
   font-weight: 300;
   letter-spacing: 4px;
   margin-bottom: var(--spacing-lg);
-  color: var(--color-forest);
+  color: var(--color-text);
 }
 
-/* ─── Botanical Ornaments ─── */
-.botanical-ornament {
+/* ─── Ornament ─── */
+.ornament {
+  font-size: 1.25rem;
+  color: var(--color-accent);
   margin-bottom: var(--spacing-md);
-  display: flex;
-  justify-content: center;
-}
-
-/* ─── Leaf Dividers between sections ─── */
-.leaf-divider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: var(--spacing-sm) 0;
-  background: linear-gradient(180deg, var(--color-warm-white) 0%, var(--color-cream) 50%, var(--color-warm-white) 100%);
-}
-
-.leaf-divider svg {
-  width: 120px;
-  height: auto;
-}
-
-.leaf-divider--alt {
-  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-warm-white) 50%, var(--color-cream) 100%);
+  opacity: 0.6;
 }
 
 /* ═══════════════════════════════════════════
@@ -444,7 +393,7 @@ a {
   justify-content: flex-end;
   padding: 0;
   overflow: hidden;
-  background-color: var(--color-forest-dark);
+  background-color: #3a3228;
 }
 
 .hero__overlay {
@@ -453,10 +402,10 @@ a {
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    transparent 35%,
-    rgba(58, 75, 46, 0.2) 55%,
-    rgba(58, 75, 46, 0.55) 75%,
-    rgba(58, 75, 46, 0.85) 100%
+    transparent 40%,
+    rgba(58, 50, 40, 0.3) 60%,
+    rgba(58, 50, 40, 0.75) 85%,
+    rgba(58, 50, 40, 0.9) 100%
   );
   z-index: 1;
 }
@@ -480,13 +429,13 @@ a {
 }
 
 .hero__label {
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: 0.8125rem;
   font-weight: 300;
   letter-spacing: 6px;
   text-transform: uppercase;
   margin-bottom: var(--spacing-sm);
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .hero__names {
@@ -499,14 +448,14 @@ a {
 }
 
 .hero__divider {
-  display: flex;
-  justify-content: center;
-  margin-bottom: var(--spacing-md);
+  width: 40px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0 auto var(--spacing-md);
 }
 
 .hero__date,
 .hero__venue {
-  font-family: var(--font-sans);
   font-size: 0.8125rem;
   font-weight: 300;
   letter-spacing: 2px;
@@ -528,7 +477,6 @@ a {
 }
 
 .countdown__label {
-  font-family: var(--font-sans);
   font-size: 0.75rem;
   font-weight: 300;
   letter-spacing: 3px;
@@ -551,7 +499,7 @@ a {
 }
 
 .countdown__number {
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 300;
   line-height: 1;
@@ -559,7 +507,6 @@ a {
 }
 
 .countdown__unit {
-  font-family: var(--font-sans);
   font-size: 0.625rem;
   font-weight: 300;
   letter-spacing: 2px;
@@ -568,7 +515,7 @@ a {
 }
 
 .countdown__sep {
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 300;
   opacity: 0.4;
@@ -579,10 +526,7 @@ a {
    Greeting Section
    ═══════════════════════════════════════════ */
 .greeting {
-  background:
-    radial-gradient(ellipse 300px 200px at 10% 20%, rgba(139,158,126,0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 250px 180px at 90% 80%, rgba(139,158,126,0.06) 0%, transparent 70%),
-    var(--color-warm-white);
+  background-color: var(--color-bg);
 }
 
 .greeting__text {
@@ -610,13 +554,12 @@ a {
 }
 
 .greeting__parents .parent-dot {
-  color: var(--color-sage);
+  color: var(--color-accent);
   font-size: 0.5rem;
 }
 
 .greeting__parents .child-name {
   font-weight: 500;
-  color: var(--color-forest);
 }
 
 .greeting__parents .deceased::before {
@@ -626,12 +569,99 @@ a {
 }
 
 /* ═══════════════════════════════════════════
+   Calendar Section
+   ═══════════════════════════════════════════ */
+.calendar-section {
+  background-color: var(--color-bg-warm);
+}
+
+.calendar {
+  max-width: 360px;
+  margin: 0 auto var(--spacing-lg);
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+}
+
+.calendar__header {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.calendar__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0;
+  margin-bottom: 0.25rem;
+}
+
+.calendar__weekday {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.calendar__weekday:first-child {
+  color: #c97070;
+}
+
+.calendar__weekday:last-child {
+  color: #6a8caf;
+}
+
+.calendar__days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0;
+}
+
+.calendar__day {
+  text-align: center;
+  padding: 0.5rem 0;
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--color-text-light);
+  position: relative;
+}
+
+.calendar__day:nth-child(7n+1) {
+  color: #c97070;
+}
+
+.calendar__day:nth-child(7n) {
+  color: #6a8caf;
+}
+
+.calendar__day.is-empty {
+  visibility: hidden;
+}
+
+.calendar__day.is-today {
+  font-weight: 700;
+  color: #fff;
+  background: var(--color-accent);
+  border-radius: 50%;
+}
+
+.calendar-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ═══════════════════════════════════════════
    Story Section
    ═══════════════════════════════════════════ */
 .story {
-  background:
-    radial-gradient(ellipse 350px 250px at 85% 30%, rgba(139,158,126,0.06) 0%, transparent 70%),
-    var(--color-cream);
+  background-color: var(--color-bg);
 }
 
 .story__text {
@@ -653,7 +683,6 @@ a {
   border-radius: var(--radius-md);
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(74, 94, 59, 0.1);
 }
 
 .story__photo-item img {
@@ -671,9 +700,7 @@ a {
    Gallery Section
    ═══════════════════════════════════════════ */
 .gallery {
-  background:
-    radial-gradient(ellipse 200px 200px at 15% 50%, rgba(139,158,126,0.05) 0%, transparent 70%),
-    var(--color-warm-white);
+  background-color: var(--color-bg-warm);
 }
 
 .gallery__grid {
@@ -705,9 +732,7 @@ a {
    Location Section
    ═══════════════════════════════════════════ */
 .location {
-  background:
-    radial-gradient(ellipse 300px 200px at 80% 20%, rgba(139,158,126,0.06) 0%, transparent 70%),
-    var(--color-cream);
+  background-color: var(--color-bg);
 }
 
 .location__info {
@@ -719,11 +744,9 @@ a {
   font-weight: 500;
   margin-bottom: 0.25rem;
   letter-spacing: 1px;
-  color: var(--color-forest);
 }
 
 .location__hall {
-  font-family: var(--font-sans);
   font-size: 0.875rem;
   font-weight: 300;
   color: var(--color-text-light);
@@ -731,7 +754,6 @@ a {
 }
 
 .location__address {
-  font-family: var(--font-sans);
   font-size: 0.8125rem;
   font-weight: 300;
   color: var(--color-text-muted);
@@ -739,7 +761,6 @@ a {
 }
 
 .location__tel {
-  font-family: var(--font-sans);
   font-size: 0.8125rem;
   font-weight: 300;
   color: var(--color-text-muted);
@@ -754,7 +775,7 @@ a {
   margin-bottom: var(--spacing-lg);
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(74, 94, 59, 0.1);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
 }
 
 .location__map-img {
@@ -767,111 +788,16 @@ a {
   display: flex;
   gap: var(--spacing-sm);
   justify-content: center;
-  margin-bottom: var(--spacing-xl);
-}
-
-/* ─── Calendar (inline in location) ─── */
-.calendar-inline {
-  margin-top: var(--spacing-lg);
-}
-
-.calendar {
-  max-width: 360px;
-  margin: 0 auto var(--spacing-lg);
-  background: var(--color-bg-card);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-md);
-  box-shadow: 0 2px 20px rgba(74, 94, 59, 0.06);
-  border: 1px solid rgba(139, 158, 126, 0.15);
-}
-
-.calendar__header {
-  font-family: var(--font-sans);
-  font-size: 1.125rem;
-  font-weight: 400;
-  letter-spacing: 2px;
-  margin-bottom: var(--spacing-sm);
-  color: var(--color-forest);
-}
-
-.calendar__weekdays {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 0;
-  margin-bottom: 0.25rem;
-}
-
-.calendar__weekday {
-  font-family: var(--font-sans);
-  font-size: 0.6875rem;
-  font-weight: 400;
-  color: var(--color-text-muted);
-  text-align: center;
-  padding: 0.5rem 0;
-}
-
-.calendar__weekday:first-child {
-  color: #c97070;
-}
-
-.calendar__weekday:last-child {
-  color: #6a8caf;
-}
-
-.calendar__days {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 0;
-}
-
-.calendar__day {
-  text-align: center;
-  padding: 0.5rem 0;
-  font-family: var(--font-sans);
-  font-size: 0.8125rem;
-  font-weight: 300;
-  color: var(--color-text-light);
-  position: relative;
-}
-
-.calendar__day:nth-child(7n+1) {
-  color: #c97070;
-}
-
-.calendar__day:nth-child(7n) {
-  color: #6a8caf;
-}
-
-.calendar__day.is-empty {
-  visibility: hidden;
-}
-
-.calendar__day.is-today {
-  font-weight: 700;
-  color: #fff;
-  background: var(--color-sage);
-  border-radius: 50%;
-}
-
-.calendar-actions {
-  display: flex;
-  gap: var(--spacing-sm);
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
 /* ═══════════════════════════════════════════
    Account Section (축의금)
    ═══════════════════════════════════════════ */
 .account {
-  background:
-    radial-gradient(ellipse 250px 200px at 20% 30%, rgba(139,158,126,0.06) 0%, transparent 70%),
-    radial-gradient(ellipse 200px 150px at 80% 70%, rgba(139,158,126,0.04) 0%, transparent 70%),
-    var(--color-warm-white);
+  background-color: var(--color-bg-warm);
 }
 
 .account__desc {
-  font-family: var(--font-sans);
   font-size: 0.875rem;
   font-weight: 300;
   color: var(--color-text-light);
@@ -882,7 +808,7 @@ a {
 .accordion {
   max-width: 400px;
   margin: 0 auto var(--spacing-sm);
-  border: 1px solid rgba(139, 158, 126, 0.25);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--color-bg-card);
@@ -894,7 +820,6 @@ a {
   justify-content: space-between;
   width: 100%;
   padding: 1rem 1.25rem;
-  font-family: var(--font-sans);
   font-size: 0.875rem;
   font-weight: 400;
   letter-spacing: 1px;
@@ -902,7 +827,7 @@ a {
 }
 
 .accordion__trigger:hover {
-  background: rgba(139, 158, 126, 0.06);
+  background: var(--color-bg);
 }
 
 .accordion__trigger span:nth-child(2) {
@@ -912,16 +837,13 @@ a {
 }
 
 .accordion__icon {
-  color: var(--color-sage);
+  color: var(--color-accent);
   font-size: 0.875rem;
-  display: flex;
-  align-items: center;
 }
 
 .accordion__arrow {
   transition: transform var(--transition);
   flex-shrink: 0;
-  color: var(--color-sage);
 }
 
 .accordion__trigger[aria-expanded="true"] .accordion__arrow {
@@ -955,7 +877,6 @@ a {
 }
 
 .account-item__role {
-  font-family: var(--font-sans);
   font-size: 0.6875rem;
   font-weight: 300;
   color: var(--color-text-muted);
@@ -963,7 +884,6 @@ a {
 }
 
 .account-item__detail {
-  font-family: var(--font-sans);
   font-size: 0.8125rem;
   font-weight: 300;
   color: var(--color-text);
@@ -979,20 +899,19 @@ a {
   align-items: center;
   gap: 0.25rem;
   padding: 0.5rem 0.75rem;
-  font-family: var(--font-sans);
   font-size: 0.75rem;
   font-weight: 300;
-  color: var(--color-forest);
-  border: 1px solid var(--color-sage-light);
+  color: var(--color-accent-dark);
+  border: 1px solid var(--color-accent-light);
   border-radius: 100px;
   transition: var(--transition);
   white-space: nowrap;
 }
 
 .account-item__copy:hover {
-  background: var(--color-sage);
+  background: var(--color-accent);
   color: var(--color-white);
-  border-color: var(--color-sage);
+  border-color: var(--color-accent);
 }
 
 /* ═══════════════════════════════════════════
@@ -1004,7 +923,7 @@ a {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-size: 0.8125rem;
   font-weight: 300;
   letter-spacing: 1px;
@@ -1015,19 +934,18 @@ a {
 }
 
 .btn--outline {
-  border: 1px solid rgba(139, 158, 126, 0.3);
+  border: 1px solid var(--color-border);
   color: var(--color-text-light);
   background: var(--color-bg-card);
 }
 
 .btn--outline:hover {
-  border-color: var(--color-sage);
-  color: var(--color-forest);
-  background: rgba(139, 158, 126, 0.06);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 .btn--text {
-  color: var(--color-forest);
+  color: var(--color-accent-dark);
   font-size: 0.8125rem;
   display: inline-flex;
   align-items: center;
@@ -1035,7 +953,7 @@ a {
 }
 
 .btn--text:hover {
-  color: var(--color-sage);
+  color: var(--color-accent);
 }
 
 .btn--kakao {
@@ -1069,20 +987,11 @@ a {
   padding: var(--spacing-lg) var(--spacing-md);
   padding-bottom: calc(var(--spacing-lg) + var(--safe-bottom));
   text-align: center;
-  background:
-    linear-gradient(180deg, var(--color-warm-white) 0%, rgba(139,158,126,0.08) 100%);
-  border-top: 1px solid rgba(139, 158, 126, 0.15);
-}
-
-.footer__leaf {
-  margin-bottom: var(--spacing-sm);
-  display: flex;
-  justify-content: center;
-  opacity: 0.6;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
 }
 
 .footer__text {
-  font-family: var(--font-sans);
   font-size: 0.75rem;
   font-weight: 300;
   color: var(--color-text-muted);
@@ -1105,7 +1014,7 @@ a {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--color-sage-light);
+  background: var(--color-accent-light);
   animation: loadingPulse 1.2s ease-in-out infinite;
 }
 
@@ -1202,10 +1111,6 @@ a {
   .section__title {
     font-size: 1.375rem;
   }
-
-  .leaf-divider svg {
-    width: 160px;
-  }
 }
 
 /* ═══════════════════════════════════════════
@@ -1215,7 +1120,7 @@ a {
   .main-content {
     max-width: 480px;
     margin: 0 auto;
-    box-shadow: 0 0 60px rgba(74, 94, 59, 0.08);
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
     min-height: 100vh;
   }
 
@@ -1230,10 +1135,6 @@ a {
   .photo-modal__container {
     padding: 4rem;
   }
-
-  .leaf-divider svg {
-    width: 180px;
-  }
 }
 
 /* ═══════════════════════════════════════════
@@ -1241,15 +1142,14 @@ a {
    ═══════════════════════════════════════════ */
 @media print {
   .curtain,
-  .leaf-canvas,
+  .petal-canvas,
   .photo-modal,
   .toast,
   .countdown,
   .calendar-actions,
   .location__links,
   .location__copy,
-  .account-item__copy,
-  .leaf-divider {
+  .account-item__copy {
     display: none !important;
   }
 

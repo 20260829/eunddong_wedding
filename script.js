@@ -1,5 +1,5 @@
 /**
- * Nature Green Wedding Invitation
+ * Classic Elegant Wedding Invitation
  * Korean Mobile 청첩장 - Script
  */
 
@@ -133,7 +133,7 @@
     // If useCurtain is false, skip the curtain entirely
     if (CONFIG.useCurtain === false) {
       curtain.style.display = 'none';
-      initFallingLeaves();
+      initPetals();
       return;
     }
 
@@ -144,7 +144,7 @@
       document.body.classList.remove('no-scroll');
       setTimeout(() => {
         curtain.classList.add('is-hidden');
-        initFallingLeaves();
+        initPetals();
       }, 1400);
     });
 
@@ -152,25 +152,16 @@
   }
 
   /* ═══════════════════════════════════════════
-     Falling Leaves Animation
+     Falling Petals
      ═══════════════════════════════════════════ */
 
-  function initFallingLeaves() {
-    const canvas = $('#leafCanvas');
+  function initPetals() {
+    const canvas = $('#petalCanvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let width, height;
-    const leaves = [];
-    const LEAF_COUNT = 20;
-
-    // Leaf color palette: green and golden tones
-    const leafColors = [
-      { fill: 'rgba(139, 158, 126, 0.6)', stroke: 'rgba(74, 94, 59, 0.3)' },   // sage green
-      { fill: 'rgba(74, 94, 59, 0.5)', stroke: 'rgba(58, 75, 46, 0.3)' },       // forest green
-      { fill: 'rgba(168, 184, 158, 0.5)', stroke: 'rgba(139, 158, 126, 0.3)' },  // light sage
-      { fill: 'rgba(180, 165, 120, 0.5)', stroke: 'rgba(139, 115, 85, 0.3)' },   // golden
-      { fill: 'rgba(160, 175, 130, 0.5)', stroke: 'rgba(100, 120, 70, 0.3)' },   // yellow-green
-    ];
+    const petals = [];
+    const PETAL_COUNT = 25;
 
     function resize() {
       width = canvas.width = window.innerWidth;
@@ -180,34 +171,32 @@
     resize();
     window.addEventListener('resize', resize);
 
-    class Leaf {
+    class Petal {
       constructor() {
         this.reset(true);
       }
 
       reset(initial = false) {
         this.x = Math.random() * width;
-        this.y = initial ? Math.random() * height * -1 : -30;
-        this.size = 10 + Math.random() * 14;
-        this.speedY = 0.4 + Math.random() * 0.8;
-        this.speedX = -0.2 + Math.random() * 0.4;
+        this.y = initial ? Math.random() * height * -1 : -20;
+        this.size = 8 + Math.random() * 10;
+        this.speedY = 0.5 + Math.random() * 1;
+        this.speedX = -0.3 + Math.random() * 0.6;
         this.rotation = Math.random() * Math.PI * 2;
-        this.rotSpeed = (Math.random() - 0.5) * 0.025;
-        this.oscillateAmp = 25 + Math.random() * 35;
-        this.oscillateSpeed = 0.008 + Math.random() * 0.015;
+        this.rotSpeed = (Math.random() - 0.5) * 0.02;
+        this.oscillateAmp = 20 + Math.random() * 30;
+        this.oscillateSpeed = 0.01 + Math.random() * 0.02;
         this.oscillateOffset = Math.random() * Math.PI * 2;
-        this.opacity = 0.15 + Math.random() * 0.35;
+        this.opacity = 0.2 + Math.random() * 0.4;
         this.t = 0;
-        this.colorSet = leafColors[Math.floor(Math.random() * leafColors.length)];
-        this.leafType = Math.floor(Math.random() * 3); // 3 leaf shape variants
       }
 
       update() {
         this.t++;
         this.y += this.speedY;
-        this.x += this.speedX + Math.sin(this.t * this.oscillateSpeed + this.oscillateOffset) * 0.4;
+        this.x += this.speedX + Math.sin(this.t * this.oscillateSpeed + this.oscillateOffset) * 0.5;
         this.rotation += this.rotSpeed;
-        if (this.y > height + 30) this.reset();
+        if (this.y > height + 20) this.reset();
       }
 
       draw() {
@@ -215,71 +204,34 @@
         ctx.translate(this.x, this.y);
         ctx.rotate(this.rotation);
         ctx.globalAlpha = this.opacity;
-
-        const s = this.size;
-
-        if (this.leafType === 0) {
-          // Oval leaf
-          ctx.beginPath();
-          ctx.moveTo(0, -s * 0.5);
-          ctx.bezierCurveTo(s * 0.5, -s * 0.4, s * 0.5, s * 0.4, 0, s * 0.5);
-          ctx.bezierCurveTo(-s * 0.5, s * 0.4, -s * 0.5, -s * 0.4, 0, -s * 0.5);
-          ctx.fillStyle = this.colorSet.fill;
-          ctx.fill();
-          // Vein
-          ctx.beginPath();
-          ctx.moveTo(0, -s * 0.45);
-          ctx.lineTo(0, s * 0.45);
-          ctx.strokeStyle = this.colorSet.stroke;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        } else if (this.leafType === 1) {
-          // Pointed leaf
-          ctx.beginPath();
-          ctx.moveTo(0, -s * 0.6);
-          ctx.bezierCurveTo(s * 0.4, -s * 0.2, s * 0.35, s * 0.3, 0, s * 0.6);
-          ctx.bezierCurveTo(-s * 0.35, s * 0.3, -s * 0.4, -s * 0.2, 0, -s * 0.6);
-          ctx.fillStyle = this.colorSet.fill;
-          ctx.fill();
-          // Vein
-          ctx.beginPath();
-          ctx.moveTo(0, -s * 0.5);
-          ctx.lineTo(0, s * 0.5);
-          ctx.strokeStyle = this.colorSet.stroke;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        } else {
-          // Round leaf
-          ctx.beginPath();
-          ctx.ellipse(0, 0, s * 0.35, s * 0.45, 0, 0, Math.PI * 2);
-          ctx.fillStyle = this.colorSet.fill;
-          ctx.fill();
-          // Vein
-          ctx.beginPath();
-          ctx.moveTo(0, -s * 0.4);
-          ctx.lineTo(0, s * 0.4);
-          ctx.moveTo(0, -s * 0.1);
-          ctx.lineTo(s * 0.2, -s * 0.25);
-          ctx.moveTo(0, 0.1);
-          ctx.lineTo(-s * 0.2, -s * 0.05);
-          ctx.strokeStyle = this.colorSet.stroke;
-          ctx.lineWidth = 0.4;
-          ctx.stroke();
-        }
-
+        ctx.fillStyle = '#e8c8b0';
+        ctx.beginPath();
+        // Petal shape
+        ctx.moveTo(0, 0);
+        ctx.bezierCurveTo(
+          this.size * 0.3, -this.size * 0.4,
+          this.size * 0.7, -this.size * 0.5,
+          this.size, 0
+        );
+        ctx.bezierCurveTo(
+          this.size * 0.7, this.size * 0.3,
+          this.size * 0.3, this.size * 0.3,
+          0, 0
+        );
+        ctx.fill();
         ctx.restore();
       }
     }
 
-    for (let i = 0; i < LEAF_COUNT; i++) {
-      leaves.push(new Leaf());
+    for (let i = 0; i < PETAL_COUNT; i++) {
+      petals.push(new Petal());
     }
 
     function animate() {
       ctx.clearRect(0, 0, width, height);
-      leaves.forEach(l => {
-        l.update();
-        l.draw();
+      petals.forEach(p => {
+        p.update();
+        p.draw();
       });
       requestAnimationFrame(animate);
     }
@@ -430,7 +382,7 @@
     const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(CONFIG.groom.name + ' ♥ ' + CONFIG.bride.name + ' 결혼식')}&dates=${startDate}/${endDate}&location=${encodeURIComponent(CONFIG.wedding.venue + ' ' + CONFIG.wedding.address)}&details=${encodeURIComponent('결혼식에 초대합니다.')}`;
     $('#googleCalBtn').href = gcalUrl;
 
-    // ICS download (Apple Calendar)
+    // ICS download
     $('#icsDownloadBtn').addEventListener('click', () => {
       const icsContent = [
         'BEGIN:VCALENDAR',
@@ -466,6 +418,7 @@
     $('#storyContent').textContent = CONFIG.story.content;
 
     const container = $('#storyPhotos');
+    // Remove loading placeholder if present
     const placeholder = container.querySelector('.loading-placeholder');
     if (placeholder) placeholder.remove();
 
@@ -487,10 +440,12 @@
 
   function initGallery(galleryImages) {
     const grid = $('#galleryGrid');
+    // Remove loading placeholder if present
     const placeholder = grid.querySelector('.loading-placeholder');
     if (placeholder) placeholder.remove();
 
     if (galleryImages.length === 0) {
+      // Hide gallery section if no images found
       const gallerySection = $('#gallery');
       if (gallerySection) gallerySection.style.display = 'none';
       return;
@@ -590,7 +545,7 @@
     if (Math.abs(diffX) < minSwipe || Math.abs(diffX) < Math.abs(diffY)) return;
 
     if (diffX > 0) {
-      modalNavigate(1);  // swipe left -> next
+      modalNavigate(1); // swipe left -> next
     } else {
       modalNavigate(-1); // swipe right -> prev
     }
