@@ -1158,3 +1158,23 @@ a {
     transform: none !important;
   }
 }
+
+
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.music-btn.active {
+  background: rgba(255,255,255,0.8);
+  color: #000;
+}
