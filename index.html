@@ -252,36 +252,3 @@
       <button class="curtain__btn" id="curtainBtn">초대장 열기</button>
     </div>
   </div>
-
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const bgm = document.getElementById('bgm');
-  const musicBtn = document.getElementById('musicBtn');
-  const curtainBtn = document.getElementById('curtainBtn');
-
-  let isPlaying = false;
-
-  // 음악 버튼
-  musicBtn.addEventListener('click', () => {
-    if (!isPlaying) {
-      bgm.play();
-      musicBtn.textContent = "🔇 음악 OFF";
-      musicBtn.classList.add('active');
-    } else {
-      bgm.pause();
-      musicBtn.textContent = "🎵 음악 ON";
-      musicBtn.classList.remove('active');
-    }
-    isPlaying = !isPlaying;
-  });
-
-  // 커튼 버튼
-  if (curtainBtn) {
-    curtainBtn.addEventListener('click', () => {
-      bgm.play();
-      musicBtn.textContent = "🔇 음악 OFF";
-      musicBtn.classList.add('active');
-      isPlaying = true;
-    });
-  }
-});
