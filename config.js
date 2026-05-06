@@ -40,8 +40,8 @@ const CONFIG = {
   wedding: {
     date: "2026-08-29",
     time: "13:00",
-    venue: "CA 웨딩 컨벤션",
-    hall: "블리스홀",
+    venue: "CA 웨딩 컨벤션 블리스홀",
+    hall: "",
     address: "충남 아산시 배방읍 희망로 100 KTX역사내 2층",
     tel: "041-520-9999",
     mapLinks: {
