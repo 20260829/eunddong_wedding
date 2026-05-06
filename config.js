@@ -21,7 +21,7 @@ const CONFIG = {
   // ── 메인 (히어로) ──
   groom: {
     name: "신동규",
-    nameEn: "GROOM",
+    nameEn: "신동규",
     father: "신용붕",
     mother: "김미경",
     fatherDeceased: false,
@@ -30,7 +30,7 @@ const CONFIG = {
 
   bride: {
     name: "김은혜",
-    nameEn: "BRIDE",
+    nameEn: "DE",
     father: "김수진",
     mother: "김경희",
     fatherDeceased: false,
@@ -68,14 +68,13 @@ const CONFIG = {
   // ── 마음 전하실 곳 ──
   accounts: {
     groom: [
-      { role: "신랑", name: "홍길동", bank: "OO은행", number: "000-000-000000" },
-      { role: "아버지", name: "홍판서", bank: "OO은행", number: "000-000-000000" },
-      { role: "어머니", name: "김순이", bank: "OO은행", number: "000-000-000000" }
+      { role: "신랑", name: "신동규", bank: "OO은행", number: "000-000-000000" },
+      { role: "어머니", name: "김미경", bank: "OO은행", number: "000-000-000000" }
     ],
     bride: [
-      { role: "신부", name: "김영희", bank: "OO은행", number: "000-000-000000" },
-      { role: "아버지", name: "김철수", bank: "OO은행", number: "000-000-000000" },
-      { role: "어머니", name: "이미자", bank: "OO은행", number: "000-000-000000" }
+      { role: "신부", name: "김은혜", bank: "OO은행", number: "000-000-000000" },
+      { role: "아버지", name: "김수진", bank: "OO은행", number: "000-000-000000" },
+      { role: "어머니", name: "김경희", bank: "OO은행", number: "000-000-000000" }
     ]
   },
 
