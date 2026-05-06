@@ -921,6 +921,58 @@ a {
   border: 0;
 }
 
+/* 🔥 달력 강제 복구 */
+.calendar table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  table-layout: fixed !important;
+}
 
+.calendar th,
+.calendar td {
+  width: 14.28% !important;
+  height: 50px !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  font-size: 15px !important;
+}
+
+.calendar tr {
+  display: table-row !important;
+}
+
+.calendar td {
+  display: table-cell !important;
+  position: relative;
+}
+
+/* 요일 */
+.calendar th {
+  color: #999;
+  font-weight: normal;
+}
+
+/* 💖 결혼식 날짜 */
+.wedding-day {
+  position: relative;
+}
+
+.wedding-day::before {
+  content: "❤";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 26px;
+  color: #ff6b81;
+  z-index: 0;
+}
+
+.wedding-day span {
+  position: relative;
+  z-index: 1;
+  font-weight: bold;
+  color: #fff;
+}
 
 
