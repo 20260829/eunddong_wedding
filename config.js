@@ -20,30 +20,30 @@ const CONFIG = {
 
   // ── 메인 (히어로) ──
   groom: {
-    name: "신랑",
+    name: "신동규",
     nameEn: "GROOM",
-    father: "아버지",
-    mother: "어머니",
+    father: "신용붕",
+    mother: "김미경",
     fatherDeceased: false,
     motherDeceased: false
   },
 
   bride: {
-    name: "신부",
+    name: "김은혜",
     nameEn: "BRIDE",
-    father: "아버지",
-    mother: "어머니",
+    father: "김수진",
+    mother: "김경희",
     fatherDeceased: false,
     motherDeceased: false
   },
 
   wedding: {
-    date: "2025-01-01",
+    date: "2026-08-29",
     time: "13:00",
-    venue: "예식장 이름",
-    hall: "3층 그랜드홀",
-    address: "서울특별시 강남구 테헤란로 123",
-    tel: "02-1234-5678",
+    venue: "CA 웨딩 컨벤션",
+    hall: "블리스홀",
+    address: "충남 아산시 배방읍 희망로 100 KTX역사내 2층",
+    tel: "041-520-9999",
     mapLinks: {
       kakao: "",
       naver: ""
