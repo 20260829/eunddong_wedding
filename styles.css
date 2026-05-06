@@ -967,5 +967,24 @@ a {
   transform: translate(-50%, -55%);
   font-size: 28px;
   color: #ff6b81;
-  z-index: -1;
+.wedding-day {
+  position: relative;
+  color: #fff;
+  font-weight: bold;
+}
+
+.wedding-day::before {
+  content: "❤";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  font-size: 26px;
+  color: #ff6b81;
+  z-index: 0; /* 🔥 -1 → 0으로 변경 */
+}
+
+.wedding-day {
+  z-index: 1;
+}
 }
