@@ -30,7 +30,7 @@ const CONFIG = {
 
   bride: {
     name: "김은혜",
-    nameEn: "DE",
+    nameEn: "김은혜",
     father: "김수진",
     mother: "김경희",
     fatherDeceased: false,
