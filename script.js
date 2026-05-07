@@ -204,8 +204,7 @@
 
 const heroVenue = $('.hero-venue');
 if (heroVenue) {
-  heroVenue.textContent =
-    `${c.wedding.venue} · ${c.wedding.hall}`;
+  heroVenue.textContent = c.wedding.venue;
 }
 
   // ── Invitation ──
