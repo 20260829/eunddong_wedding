@@ -207,6 +207,8 @@ if (heroVenue) {
   heroVenue.textContent =
     `${c.wedding.venue} · ${c.wedding.hall}`;
 }
+}
+
 
   // ── Invitation ──
   function buildInvitation(c, dateInfo, timeText) {
