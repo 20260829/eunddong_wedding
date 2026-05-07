@@ -202,11 +202,11 @@
       heroDate.textContent = `${dateInfo.year}. ${String(dateInfo.month).padStart(2, '0')}. ${String(dateInfo.day).padStart(2, '0')}. ${dateInfo.dayName}요일 ${timeText}`;
     }
 
-    const heroVenue = $('.hero-venue');
-    if (heroVenue) {
-      heroVenue.textContent = c.wedding.venue;
-    }
-  }
+const heroVenue = $('.hero-venue');
+if (heroVenue) {
+  heroVenue.textContent =
+    `${c.wedding.venue} · ${c.wedding.hall}`;
+}
 
   // ── Invitation ──
   function buildInvitation(c, dateInfo, timeText) {
