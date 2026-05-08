@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'ChosunNm';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/ChosunNm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 /* ============================================
    Modern Minimal - Korean Mobile Wedding Invitation
    Color Palette: #000, #333, #666, #999, #ccc, #e5e5e5, #f5f5f5, #fff
@@ -155,6 +161,7 @@ a {
 }
 
 .hero-names {
+  font-family: 'ChosunNm', serif;
   font-size: 32px;
   font-weight: 300;
   letter-spacing: 0.08em;
@@ -876,6 +883,7 @@ a {
 }
 
 .curtain-names {
+  font-family: 'ChosunNm', serif;
   font-size: 28px;
   font-weight: 200;
   letter-spacing: 0.15em;
