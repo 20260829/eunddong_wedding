@@ -1115,3 +1115,123 @@ a {
 .delete-btn:hover {
   color: #e74c3c;
 }
+
+.guestbook {
+  padding: 40px 18px;
+  background: #f6f6f6;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 입력 영역 */
+.guestbook-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.guestbook-form input,
+.guestbook-form textarea {
+  border: none;
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-size: 14px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  outline: none;
+}
+
+.guestbook-form textarea {
+  min-height: 90px;
+  resize: none;
+}
+
+.guestbook-form input:focus,
+.guestbook-form textarea:focus {
+  box-shadow: 0 0 0 2px #fee500;
+}
+
+/* 전송 버튼 (카카오 노란 느낌) */
+#guest-submit {
+  background: #fee500;
+  color: #111;
+  border: none;
+  padding: 12px;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#guest-submit:hover {
+  background: #f5da00;
+}
+
+/* 리스트 */
+#guestbook-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 메시지 카드 (카톡 말풍선 느낌) */
+.guestbook-item {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 12px 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  position: relative;
+  max-width: 90%;
+}
+
+/* 이름 */
+.guestbook-item strong {
+  font-size: 13px;
+  color: #222;
+}
+
+/* 메시지 */
+.guestbook-item div {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+/* 시간 */
+.guestbook-item small {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  color: #aaa;
+}
+
+/* 삭제 버튼 (조용하게) */
+.delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 11px;
+  color: #bbb;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: #ff5a5a;
+}
+
+/* 내가 만든 말풍선 느낌 살짝 */
+.guestbook-item::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 12px;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  transform: rotate(45deg);
+  box-shadow: -2px 2px 6px rgba(0,0,0,0.04);
+}
