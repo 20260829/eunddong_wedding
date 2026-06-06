@@ -1235,3 +1235,111 @@ a {
   transform: rotate(45deg);
   box-shadow: -2px 2px 6px rgba(0,0,0,0.04);
 }
+
+.guestbook {
+  padding: 40px 20px;
+  background: #f7f7f7; /* 아주 연한 그레이 배경 */
+}
+
+/* 입력 영역 */
+.guestbook-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.guestbook-form input,
+.guestbook-form textarea {
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 14px;
+  background: #fff;
+  outline: none;
+  transition: 0.2s;
+  color: #333;
+}
+
+.guestbook-form input:focus,
+.guestbook-form textarea:focus {
+  border-color: #b5b5b5;
+  box-shadow: 0 0 0 2px rgba(150,150,150,0.15);
+}
+
+.guestbook-form textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+/* 버튼 (그레이톤 포인트) */
+#guest-submit {
+  background: #444;   /* 다크 그레이 */
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#guest-submit:hover {
+  background: #222;
+}
+
+/* 리스트 */
+#guestbook-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 카드 */
+.guestbook-item {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  position: relative;
+  border: 1px solid #f0f0f0;
+}
+
+/* 이름 */
+.guestbook-item strong {
+  font-size: 14px;
+  color: #222;
+}
+
+/* 메시지 */
+.guestbook-item div {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+/* 날짜 */
+.guestbook-item small {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  color: #aaa;
+}
+
+/* 삭제 버튼 */
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  color: #bbb;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: #e74c3c;
+}
