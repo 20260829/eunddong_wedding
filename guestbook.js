@@ -98,38 +98,37 @@ async function renderGuestbook() {
     div.style.padding = "10px";
     div.style.borderBottom = "1px solid #eee";
 
-div.innerHTML = `
-  <strong>${item.name}</strong>
-  <div>${item.message}</div>
-  <small>${item.date}</small>
+    div.innerHTML = `
+      <strong>${item.name}</strong>
+      <div>${item.message}</div>
+      <small>${item.date}</small>
 
-  <div style="text-align:right; margin-top:6px;">
-    <button class="delete-btn" data-id="${item.id}">
-      삭제
-    </button>
-  </div>
-`;
+      <div style="text-align:right; margin-top:6px;">
+        <button class="delete-btn" data-id="${item.id}">
+          삭제
+        </button>
+      </div>
+    `;
 
     container.appendChild(div);
   });
-
-  // ===============================
-  // 삭제 버튼 (🔥 실수 방지 추가)
-  // ===============================
-  document.querySelectorAll(".delete-btn").forEach((btn) => {
-    btn.addEventListener("click", async (e) => {
-      const id = e.target.getAttribute("data-id");
-
-      // 🔥 실수 삭제 방지
-      const confirmDelete = confirm("정말 이 방명록을 삭제할까요?");
-
-      if (!confirmDelete) return;
-
-      await deleteGuestbook(id);
-      renderGuestbook();
-    });
-  });
 }
+
+
+// ===============================
+// 🔥 삭제 (이벤트 위임 - 핵심 수정)
+// ===============================
+document.getElementById("guestbook-list").addEventListener("click", async (e) => {
+  if (!e.target.classList.contains("delete-btn")) return;
+
+  const id = e.target.getAttribute("data-id");
+
+  const ok = confirm("정말 이 방명록을 삭제할까요?");
+  if (!ok) return;
+
+  await deleteGuestbook(id);
+  renderGuestbook();
+});
 
 
 // ===============================
