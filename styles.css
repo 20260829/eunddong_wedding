@@ -1100,21 +1100,6 @@ a {
   color: #aaa;
 }
 
-/* 삭제 버튼 */
-.delete-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  font-size: 12px;
-  color: #aaa;
-  cursor: pointer;
-}
-
-.delete-btn:hover {
-  color: #e74c3c;
-}
 
 .guestbook {
   padding: 40px 18px;
@@ -1207,21 +1192,6 @@ a {
   color: #aaa;
 }
 
-/* 삭제 버튼 (조용하게) */
-.delete-btn {
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  font-size: 11px;
-  color: #bbb;
-  cursor: pointer;
-}
-
-.delete-btn:hover {
-  color: #ff5a5a;
-}
 
 /* 내가 만든 말풍선 느낌 살짝 */
 .guestbook-item::before {
@@ -1328,35 +1298,6 @@ a {
   color: #aaa;
 }
 
-/* 삭제 버튼 */
-.delete-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  font-size: 12px;
-  color: #bbb;
-  cursor: pointer;
-}
-
-.delete-btn:hover {
-  color: #e74c3c;
-}
-
-.delete-btn {
-  display: inline-block;
-  margin-top: 6px;
-  font-size: 12px;
-  color: #888;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.delete-btn:hover {
-  color: #e74c3c;
-}
 
 .guestbook-card {
   background: #fff;
@@ -1385,16 +1326,4 @@ a {
   display: flex;
   justify-content: flex-end;
   margin-top: 8px;
-}
-
-.delete-btn {
-  border: none;
-  background: none;
-  font-size: 12px;
-  color: #aaa;
-  cursor: pointer;
-}
-
-.delete-btn:hover {
-  color: #e74c3c;
 }
