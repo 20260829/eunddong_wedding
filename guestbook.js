@@ -110,10 +110,17 @@ async function renderGuestbook() {
     container.appendChild(div);
   });
 
-  // 삭제 버튼 이벤트 연결
+  // ===============================
+  // 삭제 버튼 (🔥 실수 방지 추가)
+  // ===============================
   document.querySelectorAll(".delete-btn").forEach((btn) => {
     btn.addEventListener("click", async (e) => {
       const id = e.target.getAttribute("data-id");
+
+      // 🔥 실수 삭제 방지
+      const confirmDelete = confirm("정말 이 방명록을 삭제할까요?");
+
+      if (!confirmDelete) return;
 
       await deleteGuestbook(id);
       renderGuestbook();
