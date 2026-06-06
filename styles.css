@@ -1343,3 +1343,17 @@ a {
 .delete-btn:hover {
   color: #e74c3c;
 }
+
+.delete-btn {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: #e74c3c;
+}
