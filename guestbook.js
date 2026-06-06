@@ -94,16 +94,19 @@ async function renderGuestbook() {
   list.forEach((item) => {
     const div = document.createElement("div");
 
-    div.style.marginBottom = "12px";
-    div.style.padding = "10px";
-    div.style.borderBottom = "1px solid #eee";
+    div.className = "guestbook-card";
 
     div.innerHTML = `
-      <strong>${item.name}</strong>
-      <div>${item.message}</div>
-      <small>${item.date}</small>
+      <div class="guestbook-top">
+        <strong>${item.name}</strong>
+        <small>${item.date}</small>
+      </div>
 
-      <div style="text-align:right; margin-top:6px;">
+      <div class="guestbook-message">
+        ${item.message}
+      </div>
+
+      <div class="guestbook-bottom">
         <button class="delete-btn" data-id="${item.id}">
           삭제
         </button>
@@ -116,7 +119,7 @@ async function renderGuestbook() {
 
 
 // ===============================
-// 🔥 삭제 (이벤트 위임 - 핵심 수정)
+// 삭제 (이벤트 위임 - 안정 버전)
 // ===============================
 document.getElementById("guestbook-list").addEventListener("click", async (e) => {
   if (!e.target.classList.contains("delete-btn")) return;
