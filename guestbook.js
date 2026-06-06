@@ -1,7 +1,3 @@
-// ===============================
-// Firebase Guestbook (완성본)
-// ===============================
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 import {
   getFirestore,
@@ -10,12 +6,14 @@ import {
   getDocs,
   query,
   orderBy,
-  serverTimestamp
+  serverTimestamp,
+  deleteDoc,
+  doc
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 
 // ===============================
-// Firebase 설정 (너 코드 그대로)
+// Firebase 설정
 // ===============================
 const firebaseConfig = {
   apiKey: "AIzaSyCZJlxqpl-V1RCwx37syPd81nzyCMW6A2M",
@@ -28,30 +26,34 @@ const firebaseConfig = {
 
 
 // ===============================
-// Firebase 초기화
+// 초기화
 // ===============================
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 
 // ===============================
-// 방명록 저장
+// 저장
 // ===============================
 async function addGuestbook(name, message) {
-  try {
-    await addDoc(collection(db, "guestbook"), {
-      name: name,
-      message: message,
-      createdAt: serverTimestamp()
-    });
-  } catch (e) {
-    console.error("저장 실패:", e);
-  }
+  await addDoc(collection(db, "guestbook"), {
+    name,
+    message,
+    createdAt: serverTimestamp()
+  });
 }
 
 
 // ===============================
-// 방명록 불러오기
+// 삭제
+// ===============================
+async function deleteGuestbook(id) {
+  await deleteDoc(doc(db, "guestbook", id));
+}
+
+
+// ===============================
+// 불러오기
 // ===============================
 async function loadGuestbook() {
   const q = query(
@@ -63,10 +65,11 @@ async function loadGuestbook() {
 
   const list = [];
 
-  snapshot.forEach((doc) => {
-    const data = doc.data();
+  snapshot.forEach((docItem) => {
+    const data = docItem.data();
 
     list.push({
+      id: docItem.id,
       name: data.name,
       message: data.message,
       date: data.createdAt
@@ -80,7 +83,7 @@ async function loadGuestbook() {
 
 
 // ===============================
-// 화면에 출력
+// 화면 출력
 // ===============================
 async function renderGuestbook() {
   const container = document.getElementById("guestbook-list");
@@ -98,16 +101,29 @@ async function renderGuestbook() {
     div.innerHTML = `
       <strong>${item.name}</strong><br>
       <div>${item.message}</div>
-      <small>${item.date}</small>
+      <small>${item.date}</small><br>
+      <button class="delete-btn" data-id="${item.id}">
+        삭제
+      </button>
     `;
 
     container.appendChild(div);
+  });
+
+  // 삭제 버튼 이벤트 연결
+  document.querySelectorAll(".delete-btn").forEach((btn) => {
+    btn.addEventListener("click", async (e) => {
+      const id = e.target.getAttribute("data-id");
+
+      await deleteGuestbook(id);
+      renderGuestbook();
+    });
   });
 }
 
 
 // ===============================
-// 버튼 연결 (핵심)
+// 저장 버튼
 // ===============================
 document.getElementById("guest-submit").addEventListener("click", async () => {
   const name = document.getElementById("guest-name").value;
@@ -125,6 +141,6 @@ document.getElementById("guest-submit").addEventListener("click", async () => {
 
 
 // ===============================
-// 처음 로딩 시 실행
+// 최초 실행
 // ===============================
 renderGuestbook();
