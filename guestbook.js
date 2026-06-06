@@ -98,14 +98,17 @@ async function renderGuestbook() {
     div.style.padding = "10px";
     div.style.borderBottom = "1px solid #eee";
 
-    div.innerHTML = `
-      <strong>${item.name}</strong><br>
-      <div>${item.message}</div>
-      <small>${item.date}</small><br>
-      <button class="delete-btn" data-id="${item.id}">
-        삭제
-      </button>
-    `;
+div.innerHTML = `
+  <strong>${item.name}</strong>
+  <div>${item.message}</div>
+  <small>${item.date}</small>
+
+  <div style="text-align:right; margin-top:6px;">
+    <button class="delete-btn" data-id="${item.id}">
+      삭제
+    </button>
+  </div>
+`;
 
     container.appendChild(div);
   });
