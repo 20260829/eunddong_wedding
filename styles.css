@@ -1357,3 +1357,44 @@ a {
 .delete-btn:hover {
   color: #e74c3c;
 }
+
+.guestbook-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.guestbook-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.guestbook-message {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.guestbook-bottom {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.delete-btn {
+  border: none;
+  background: none;
+  font-size: 12px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: #e74c3c;
+}
